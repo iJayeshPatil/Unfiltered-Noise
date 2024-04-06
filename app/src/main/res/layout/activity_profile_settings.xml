@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".views.onboardingviews.ProfileSettingsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbarSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbarSettings"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/setImagePlaceholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawingCacheQuality="high"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/account_circle_fill0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-50dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userNameEditLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="User Name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.30">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userNameText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userEmailEditLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:hint="Email"
+                    app:layout_constraintEnd_toEndOf="@+id/userNameEditLayout"
+                    app:layout_constraintStart_toStartOf="@+id/userNameEditLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/userNameEditLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userEmailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/changePass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/password_fill1"
+                    android:drawableEnd="@drawable/arrow_forward"
+                    android:drawablePadding="9dp"
+                    android:padding="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Change Password"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/userEmailEditLayout"
+                    app:layout_constraintStart_toStartOf="@+id/userEmailEditLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/userEmailEditLayout" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/changePass"
+                    app:layout_constraintTop_toBottomOf="@+id/changePass" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/preference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="9dp"
+                    android:drawableStart="@drawable/newspaper_fill0"
+                    android:drawableEnd="@drawable/arrow_forward"
+                    android:padding="5dp"
+                    android:text="News Preference"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider11"
+                    app:layout_constraintStart_toStartOf="@+id/divider11"
+                    app:layout_constraintTop_toBottomOf="@+id/divider11" />
+
+
+
+                <TextView
+                    android:id="@+id/saveEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.99"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.01" />
+
+                <ImageButton
+                    android:id="@+id/editPFP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent"
+                    android:elevation="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/rounded_edit_24" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarSSpfp"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/userNameEditLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/editPFP"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.00999999" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardViewAccount"
+            app:layout_constraintStart_toStartOf="@+id/cardViewAccount"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewAccount">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/Support"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:drawablePadding="9dp"
+                    android:drawableStart="@drawable/contact_support_fill0"
+                    android:text="Contact Support"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableEnd="@drawable/arrow_forward" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/Support"
+                    app:layout_constraintTop_toBottomOf="@+id/Support" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/RateUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="9dp"
+                    android:drawableStart="@drawable/family_star_fill0"
+                    android:drawableEnd="@drawable/arrow_forward"
+                    android:padding="10dp"
+                    android:text="Rate Us"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider1"
+                    app:layout_constraintStart_toStartOf="@+id/divider1"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginHorizontal="6dp"
+                    app:layout_constraintEnd_toEndOf="@id/RateUs"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/RateUs"
+                    app:layout_constraintTop_toBottomOf="@+id/RateUs" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/WhatsNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:drawablePadding="9dp"
+                    android:drawableStart="@drawable/new_releases_fill0"
+                    android:drawableEnd="@drawable/arrow_forward"
+                    android:text="What's New"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider2"
+                    app:layout_constraintStart_toStartOf="@+id/divider2"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+
+                    app:layout_constraintEnd_toEndOf="@id/WhatsNew"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/WhatsNew"
+                    app:layout_constraintTop_toBottomOf="@+id/WhatsNew" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/AboutUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:drawablePadding="9dp"
+                    android:drawableStart="@drawable/info_fill0"
+                    android:drawableEnd="@drawable/arrow_forward"
+                    android:text="About Us"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider3"
+                    app:layout_constraintStart_toStartOf="@+id/divider3"
+                    app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+
+                    app:layout_constraintEnd_toEndOf="@id/AboutUs"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/AboutUs"
+                    app:layout_constraintTop_toBottomOf="@+id/AboutUs" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/logOutText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/arrow_forward"
+                    android:padding="10dp"
+                    android:drawablePadding="9dp"
+                    android:drawableStart="@drawable/logout_fill0"
+                    android:text="Log Out"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider4"
+                    app:layout_constraintStart_toStartOf="@+id/divider4"
+                    app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
+
+<!--<TextView-->
+<!--android:id="@+id/Support"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="8dp"-->
+<!--android:padding="10dp"-->
+<!--android:text="Contact Support"-->
+<!--android:textSize="18sp"-->
+<!--app:layout_constraintEnd_toEndOf="@+id/cardViewAccount"-->
+<!--app:layout_constraintStart_toStartOf="@+id/cardViewAccount"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/cardViewAccount" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/RateUs"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="8dp"-->
+<!--android:padding="10dp"-->
+<!--android:text="Rate Us"-->
+<!--android:textSize="18sp"-->
+<!--app:layout_constraintEnd_toEndOf="@+id/Support"-->
+<!--app:layout_constraintStart_toStartOf="@+id/Support"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/Support" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/WhatsNew"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="8dp"-->
+<!--android:padding="10dp"-->
+<!--android:text="What's New"-->
+<!--android:textSize="18sp"-->
+<!--app:layout_constraintEnd_toEndOf="@+id/RateUs"-->
+<!--app:layout_constraintStart_toStartOf="@+id/RateUs"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/RateUs" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/logOutText"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="34dp"-->
+<!--android:gravity="center"-->
+<!--android:padding="10dp"-->
+<!--android:text="Log Out"-->
+<!--android:textColor="#D81B1B"-->
+<!--android:textSize="20sp"-->
+<!--android:textStyle="bold"-->
+<!--app:layout_constraintEnd_toEndOf="@+id/WhatsNew"-->
+<!--app:layout_constraintStart_toStartOf="@+id/WhatsNew"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/WhatsNew" />-->

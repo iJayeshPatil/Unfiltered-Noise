@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "61532351025",
+    "project_id": "unfiltered-noise-73a8d",
+    "storage_bucket": "unfiltered-noise-73a8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61532351025:android:bbaf70a8ade42b30d8c310",
+        "android_client_info": {
+          "package_name": "com.example.unfilterednoise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdTen4lZyfsJ5FDdK_adughFRDbCiUzaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

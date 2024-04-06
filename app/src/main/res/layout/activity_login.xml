@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@android:color/black"
+    android:fillViewport="true"
+    tools:context=".views.onboardingviews.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Login to your account"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Email"
+            app:boxCornerRadiusBottomEnd="15sp"
+            app:boxCornerRadiusBottomStart="15sp"
+            app:boxCornerRadiusTopEnd="15sp"
+            app:boxCornerRadiusTopStart="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/loginText"
+            app:layout_constraintStart_toStartOf="@+id/loginText"
+            app:layout_constraintTop_toBottomOf="@+id/loginText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userEmailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/mail_fill1"
+                android:drawablePadding="10dp"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Password"
+            app:boxCornerRadiusBottomEnd="15sp"
+            app:boxCornerRadiusBottomStart="15sp"
+            app:boxCornerRadiusTopEnd="15sp"
+            app:boxCornerRadiusTopStart="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/emailInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/emailInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userPassLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/password_fill1"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/rememberCheckSP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Remember me"
+            app:layout_constraintEnd_toEndOf="@+id/passInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/passInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/passInputLayout" />
+
+        <TextView
+            android:id="@+id/forgotPassT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="15sp"
+            android:text="Forgot Password?"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/passInputLayout"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/passInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/passInputLayout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signInB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:text="Sign in"
+            app:layout_constraintEnd_toStartOf="@+id/forgotPassT"
+            app:layout_constraintStart_toEndOf="@+id/rememberCheckSP"
+            app:layout_constraintTop_toBottomOf="@+id/rememberCheckSP" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider2"
+            android:layout_width="145sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/rememberCheckSP"
+            app:layout_constraintStart_toStartOf="@+id/rememberCheckSP"
+            app:layout_constraintTop_toBottomOf="@+id/signInB" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="145sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/forgotPassT"
+            app:layout_constraintStart_toStartOf="@+id/forgotPassT"
+            app:layout_constraintTop_toBottomOf="@+id/signInB" />
+
+        <TextView
+            android:id="@+id/contText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14sp"
+            android:text="or continue with"
+            app:layout_constraintEnd_toStartOf="@+id/materialDivider"
+            app:layout_constraintStart_toEndOf="@+id/materialDivider2"
+            app:layout_constraintTop_toBottomOf="@+id/signInB" />
+
+        <ImageButton
+            android:id="@+id/googleSignIn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/google"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider2"
+            app:layout_constraintTop_toBottomOf="@+id/contText" />
+
+        <TextView
+            android:id="@+id/dText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Don't have an account? Sign Up"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/googleSignIn"
+            app:layout_constraintStart_toStartOf="@+id/googleSignIn"
+            app:layout_constraintTop_toBottomOf="@+id/googleSignIn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

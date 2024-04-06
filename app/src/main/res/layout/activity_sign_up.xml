@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".views.onboardingviews.SignUpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/signUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Elevate your news experience. \nLet's Sign Up"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            app:boxCornerRadiusBottomEnd="15sp"
+            app:boxCornerRadiusBottomStart="15sp"
+            app:boxCornerRadiusTopEnd="15sp"
+            app:boxCornerRadiusTopStart="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/signUpText"
+            app:layout_constraintStart_toStartOf="@+id/signUpText"
+            app:layout_constraintTop_toBottomOf="@+id/signUpText"
+            app:layout_constraintVertical_bias="0.15">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userEmailSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/mail_fill1"
+                android:drawablePadding="10dp"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Password"
+            app:boxCornerRadiusBottomEnd="15sp"
+            app:boxCornerRadiusBottomStart="15sp"
+            app:boxCornerRadiusTopEnd="15sp"
+            app:boxCornerRadiusTopStart="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/emailInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/emailInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userPassSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/password_fill1"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/rememberCheckSP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="start|center_horizontal"
+            android:padding="3dp"
+            android:text="By clicking Sign Up button, you agree to our \nTerms of Service and Privacy Policy"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/passInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/passInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/passInputLayout" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signUpB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="Sign Up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rememberCheckSP" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider2"
+            android:layout_width="145sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpB" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="145sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpB" />
+
+        <TextView
+            android:id="@+id/contText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="or continue with"
+            app:layout_constraintEnd_toStartOf="@+id/materialDivider"
+            app:layout_constraintStart_toEndOf="@+id/materialDivider2"
+            app:layout_constraintTop_toBottomOf="@+id/signUpB" />
+
+        <ImageButton
+            android:id="@+id/googleSignUp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/google"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider2"
+            app:layout_constraintTop_toBottomOf="@+id/contText" />
+
+        <TextView
+            android:id="@+id/hText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Already have an account? Sign In"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/googleSignUp"
+            app:layout_constraintStart_toStartOf="@+id/googleSignUp"
+            app:layout_constraintTop_toBottomOf="@+id/googleSignUp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/ForYouPage"
+        android:icon="@drawable/explore_fill0"
+        android:title="For You"/>
+
+    <item android:id="@+id/TopicsPage"
+        android:icon="@drawable/topics_fill0"
+        android:title="Topics"/>
+
+    <item android:id="@+id/CommunityPage"
+        android:icon="@drawable/hub_fill0"
+        android:title="Community"/>
+
+    <item android:id="@+id/ProfilePage"
+        android:icon="@drawable/account_circle_fill0"
+        android:title="You"/>
+
+</menu>

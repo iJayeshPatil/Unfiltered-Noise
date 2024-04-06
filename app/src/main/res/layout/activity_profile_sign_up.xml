@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@android:color/white"
+    android:fillViewport="true"
+    tools:context=".views.onboardingviews.ProfileSignUpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/black"
+            android:text="Hey! 👋🏻"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/black"
+            android:text="Select your unique look &amp; username"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif"
+            app:layout_constraintEnd_toEndOf="@+id/materialTextView"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="@+id/materialTextView2"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView2"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/userImageSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rounded_account_circle_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="-35dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/userImageSelection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rounded_edit_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userNameInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="User Name"
+            app:boxCornerRadiusBottomEnd="15sp"
+            app:boxCornerRadiusBottomStart="15sp"
+            app:boxCornerRadiusTopEnd="15sp"
+            app:boxCornerRadiusTopStart="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNameSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/rounded_account_circle_24"
+                android:drawablePadding="10dp"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/completeProfileB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Finish"
+            app:layout_constraintEnd_toEndOf="@+id/userNameInputLayout"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/userNameInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/userNameInputLayout" />
+
+        <ProgressBar
+            android:id="@+id/progressBarpfpS"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
