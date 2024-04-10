@@ -56,7 +56,7 @@ class TopicsFragment : Fragment(R.layout.fragment_topics) {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         communityAdapter = TopicsAdapter(communities) { community ->
             val intent = Intent(requireContext(), TopicNewsActivity::class.java)
-            intent.putExtra("communityId", community.id)
+            intent.putExtra("topicId", community.id)
             startActivity(intent)
         }
         recyclerView.adapter = communityAdapter

@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.unfilterednoise.AboutUsActivity
 import com.example.unfilterednoise.R
 import com.example.unfilterednoise.databinding.ActivityProfileSettingsBinding
 import com.example.unfilterednoise.views.mainbottomnavigation.MainNavActivity
@@ -57,6 +58,12 @@ class ProfileSettingsActivity : AppCompatActivity() {
         }
         binding.materialToolbarSettings.title="Profile Settings"
 
+        binding.AboutUs.setOnClickListener {
+
+            startActivity(Intent(applicationContext,AboutUsActivity::class.java))
+
+        }
+
 
         binding.logOutText.setOnClickListener {
 
@@ -92,6 +99,8 @@ class ProfileSettingsActivity : AppCompatActivity() {
 
         }
 
+
+
         binding.editPFP.setOnClickListener {
             resultLauncher.launch("image/*")
         }
@@ -110,6 +119,11 @@ class ProfileSettingsActivity : AppCompatActivity() {
                     Snackbar.ANIMATION_MODE_SLIDE
                 ).show()
             }
+        }
+
+        binding.preference.setOnClickListener {
+            startActivity(Intent(applicationContext,PreferenceSelectionActivity::class.java))
+
         }
 
         binding.RateUs.setOnClickListener {

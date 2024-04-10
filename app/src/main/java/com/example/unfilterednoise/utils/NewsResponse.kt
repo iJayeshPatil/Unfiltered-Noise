@@ -1,6 +1,6 @@
 package com.example.unfilterednoise.utils
 
-import com.example.unfilterednoise.utils.n_api.Article
+import com.example.unfilterednoise.utils.news_api.Article
 
 data class NewsResponse(
     val articles: List<Article>,

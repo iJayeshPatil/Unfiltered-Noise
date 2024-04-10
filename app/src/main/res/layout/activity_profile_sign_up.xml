@@ -138,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Finish"
+            android:text="Next"
             app:layout_constraintEnd_toEndOf="@+id/userNameInputLayout"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/userNameInputLayout"

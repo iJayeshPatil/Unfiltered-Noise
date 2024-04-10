@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_width="149dp"
+    android:layout_height="201dp"
+    android:fadingEdge="horizontal"
+    android:backgroundTint="@color/shimmer1"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/headlineFeedCVShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:backgroundTint="@color/shimmer2"
+            android:padding="5dp"
+            android:layout_marginHorizontal="3dp"
+            android:layout_marginTop="9dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/headlineFeed89Shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:maxLines="3"
+            android:backgroundTint="@color/shimmer2"
+            android:padding="5dp"
+            android:layout_marginHorizontal="3dp"
+            android:layout_marginTop="9dp"
+            android:textIsSelectable="true"
+            app:layout_constraintTop_toBottomOf="@+id/headlineFeedCVShimmer" />
+
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/imgHoldCard1Shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            app:cardCornerRadius="14dp"
+            android:layout_marginTop="15dp"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/shimmer3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headlineFeed89Shimmer">
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

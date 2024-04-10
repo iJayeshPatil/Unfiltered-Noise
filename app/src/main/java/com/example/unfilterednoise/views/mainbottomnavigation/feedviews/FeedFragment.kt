@@ -2,9 +2,7 @@ package com.example.unfilterednoise.views.mainbottomnavigation.feedviews
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +12,7 @@ import com.example.unfilterednoise.adapters.ForYouNewsAdapter
 import com.example.unfilterednoise.adapters.LatestNewsAdapter
 import com.example.unfilterednoise.databinding.FragmentFeedBinding
 import com.example.unfilterednoise.utils.NewsApiService
+import com.example.unfilterednoise.utils.news_api.Article
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,15 +27,19 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
     private lateinit var adapter: LatestNewsAdapter
     private lateinit var newsApiService: NewsApiService
 
+
     private lateinit var recyclerView1: RecyclerView
     private lateinit var adapter1: ForYouNewsAdapter
 
+    private var article :MutableList<Article> = mutableListOf()
 
     private lateinit var binding: FragmentFeedBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding= FragmentFeedBinding.bind(view)
+
+        binding.shimmerNewsFeed.startShimmer()
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://newsapi.org/v2/")
@@ -48,12 +51,14 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
 
         recyclerView = binding.latestNewsFeedRecycler
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 1, GridLayoutManager.HORIZONTAL, false)
-        adapter = LatestNewsAdapter()
+        adapter = LatestNewsAdapter(requireContext(),article)
         recyclerView.adapter = adapter
+
+
 
         recyclerView1 = binding.newsFeedRecycler
         recyclerView1.layoutManager = LinearLayoutManager(requireContext())
-        adapter1 = ForYouNewsAdapter()
+        adapter1 = ForYouNewsAdapter(requireContext(),article)
         recyclerView1.adapter = adapter1
 
 
@@ -74,6 +79,9 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
                 withContext(Dispatchers.Main) {
                     adapter.setArticles(response.articles)
                     adapter1.setArticles(response.articles)
+                    binding.shimmerNewsFeed.stopShimmer()
+                    binding.shimmerNewsFeed.visibility=View.GONE
+                    binding.feedLayout.visibility=View.VISIBLE
                 }
             } catch (e: Exception) {
                 Log.e("MainActivity", "Error fetching news", e)

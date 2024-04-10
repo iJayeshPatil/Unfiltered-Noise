@@ -50,8 +50,11 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-auth:22.3.1")
-    implementation("com.google.firebase:firebase-firestore:24.10.3")
+    implementation("com.google.firebase:firebase-firestore:24.11.0")
     implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.activity:activity:1.8.0")
     testImplementation("junit:junit:4.13.2")
@@ -61,6 +64,10 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.3.0")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-//    implementation ("com.github.mmin18:realtimeblurview:1.2.1")
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+    implementation ("org.tensorflow:tensorflow-lite-task-vision-play-services:0.4.2")
+    implementation ("com.google.android.gms:play-services-tflite-gpu:16.2.0")
+    implementation ("com.github.shubham0204:Text2Summary-Android:alpha-02")
+
 
 }

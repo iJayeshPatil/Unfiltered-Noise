@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/postB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,15 +55,27 @@
                 <EditText
                     android:id="@+id/postTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="12.5dp"
+                    android:background="@android:color/transparent"
                     android:ems="10"
                     android:hint="Title"
                     android:inputType="text"
+                    android:padding="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    app:layout_constraintEnd_toEndOf="@+id/postTitle"
+                    app:layout_constraintStart_toStartOf="@+id/postTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/postTitle" />
 
                 <EditText
                     android:id="@+id/postContent"
@@ -74,10 +86,10 @@
                     android:gravity="start|top"
                     android:hint="What do you want to talk about!"
                     android:inputType="textMultiLine"
-                    android:padding="10dp"
-                    app:layout_constraintEnd_toEndOf="@+id/postTitle"
-                    app:layout_constraintStart_toStartOf="@+id/postTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/postTitle" />
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider13"
+                    app:layout_constraintStart_toStartOf="@+id/divider13"
+                    app:layout_constraintTop_toBottomOf="@+id/divider13" />
 
                 <ImageView
                     android:id="@+id/imageViewPost"

@@ -39,6 +39,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             activity?.finish()
         }
 
+
+
+
+
         if (userEmail.isNotEmpty()) {
             firestore.collection("UserDetails")
                 .whereEqualTo("UserEmail", userEmail).get().addOnSuccessListener { documents ->
@@ -52,6 +56,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                         if (userName.isNotEmpty()) {
                             binding.userNameP.text = userName
                             binding.userRole.text = userRole
+                            countUserPosts(auth.currentUser?.uid.toString())
+                            countUserComments(auth.currentUser?.uid.toString())
+
                             if (userRole == "Admin") {
                                 binding.userRole.setTextColor(Color.parseColor("#226CFF"))
                             } else {
@@ -64,4 +71,40 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
 
     }
+
+    private fun countUserPosts(userId: String) {
+        val db = FirebaseFirestore.getInstance()
+        db.collection("CommunityPosts")
+            .whereEqualTo("CreatedBy", userId)
+            .get()
+            .addOnSuccessListener { documents ->
+                val numberOfPosts = documents.size()
+                binding.postCountP.text=numberOfPosts.toString()
+
+            }
+            .addOnFailureListener { exception ->
+                Log.d("FirestoreDemo", "Error getting documents: ", exception)
+            }
+    }
+
+    private fun countUserComments(userId: String) {
+        val db = FirebaseFirestore.getInstance()
+        val postsRef = db.collection("CommunityPosts")
+        var totalComments = 0
+
+        postsRef.get().addOnSuccessListener { documents ->
+            for (document in documents) {
+                document.reference.collection("Comments")
+                    .whereEqualTo("UserId", userId)
+                    .get()
+                    .addOnSuccessListener { comments ->
+                        totalComments += comments.size()
+                        binding.commentCountP.text=totalComments.toString()
+                        Log.d("CommentsCount", "Total comments so far: $totalComments")
+                    }
+            }
+        }
+    }
+
+
 }

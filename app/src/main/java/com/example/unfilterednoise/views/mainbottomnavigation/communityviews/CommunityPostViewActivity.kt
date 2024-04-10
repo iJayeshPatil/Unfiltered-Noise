@@ -1,5 +1,6 @@
 package com.example.unfilterednoise.views.mainbottomnavigation.communityviews
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -17,9 +18,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unfilterednoise.R
 import com.example.unfilterednoise.adapters.CommentsAdapter
+import com.example.unfilterednoise.adapters.LikesAdapter
 import com.example.unfilterednoise.databinding.ActivityCommunityPostViewBinding
+import com.example.unfilterednoise.databinding.BottomSheetPostsLikeBinding
 import com.example.unfilterednoise.datamodels.Comments
 import com.example.unfilterednoise.datamodels.Like
+import com.example.unfilterednoise.datamodels.LikedUsers
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -42,8 +47,10 @@ class CommunityPostViewActivity : AppCompatActivity() {
     private lateinit var posterImgIcon: ImageView
     private lateinit var pId:String
     private lateinit var recyclerView: RecyclerView
-    private lateinit var commentsAdapter:                                                                                                                                                                                                                                                                                                       CommentsAdapter
+    private lateinit var likeAdapter : LikesAdapter
+    private lateinit var commentsAdapter: CommentsAdapter
     private lateinit var commentCount:String
+    private val likedUser :MutableList<LikedUsers> = mutableListOf()
     private val comments :MutableList<Comments> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +85,7 @@ class CommunityPostViewActivity : AppCompatActivity() {
             binding.commentCountTextV.text=postComment.toString()
 
             recyclerView = binding.commentsRecycler
-            commentsAdapter= CommentsAdapter(comments)
+            commentsAdapter= CommentsAdapter(comments,pId)
             recyclerView.layoutManager = LinearLayoutManager(this)
             recyclerView.adapter = commentsAdapter
             loadCommentsFromFirestore()
@@ -349,7 +356,7 @@ class CommunityPostViewActivity : AppCompatActivity() {
 
             R.id.likedPost ->{
 
-                Toast.makeText(applicationContext, "Worth the Wait", Toast.LENGTH_SHORT).show()
+//                showLikedUsersBottomSheet()
 
             }
 
@@ -358,4 +365,38 @@ class CommunityPostViewActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+
+
+
 }
+
+
+//private fun showLikedUsersBottomSheet() {
+//    val bottomSheetView = layoutInflater.inflate(R.layout.bottom_sheet_post_likes_layout, null)
+//    val recyclerView = bottomSheetView.findViewById<RecyclerView>(R.id.likeRecycler)
+//    val likedUsers = mutableListOf<LikedUsers>()
+//    val adapterLike = LikesAdapter(likedUsers)
+//    // Set a LinearLayoutManager to the RecyclerView
+//    recyclerView.layoutManager = LinearLayoutManager(this)
+//
+//    // Fetch the list of liked users from Firestore and pass it to the adapter
+//    val postRef = FirebaseFirestore.getInstance().collection("CommunityPosts").document(pId)
+//    postRef.collection("Likes").get().addOnSuccessListener { querySnapshot ->
+//        for (document in querySnapshot) {
+//            val userUid = document.id
+//            getUser(userUid) { userName, _, userPfp ->
+//                val likedUser = LikedUsers(userName, userPfp)
+//                likedUsers.add(likedUser)
+//                adapterLike.notifyDataSetChanged()
+//            }
+//        }
+//        recyclerView.adapter = adapterLike
+//    }.addOnFailureListener { exception ->
+//        Log.e("showLikedUsersBottomSheet", "Error fetching liked users", exception)
+//        // Handle failure
+//    }
+//
+//    val dialog = BottomSheetDialog(this)
+//    dialog.setContentView(bottomSheetView)
+//    dialog.show()
+//}

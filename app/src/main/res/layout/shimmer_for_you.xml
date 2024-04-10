@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="103dp"
+    app:cardCornerRadius="16dp"
+    android:layout_marginTop="8dp"
+    android:backgroundTint="@color/shimmer1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/newsTitleFYShimmer"
+            android:layout_width="246dp"
+            android:layout_height="32dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/shimmer2"
+            android:maxLines="3"
+            android:padding="6dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/newsTitleFShimmer"
+            android:layout_width="246dp"
+            android:layout_height="32dp"
+            android:backgroundTint="@color/shimmer2"
+            android:maxLines="3"
+            android:layout_margin="15dp"
+            android:padding="6dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/newsTitleFYShimmer"
+            app:layout_constraintStart_toStartOf="@+id/newsTitleFYShimmer"
+            app:layout_constraintTop_toBottomOf="@+id/newsTitleFYShimmer" />
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/iconCardCFShimmer"
+            android:layout_width="129dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/shimmer2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/newsTitleFShimmer"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -17,7 +17,6 @@ class CommunityPostAdapter(private val posts : List<CommunityPost>, private val 
         return PostsViewHolder(view)
     }
 
-
     override fun onBindViewHolder(holder: PostsViewHolder, position: Int) {
 
         val post = posts[position]

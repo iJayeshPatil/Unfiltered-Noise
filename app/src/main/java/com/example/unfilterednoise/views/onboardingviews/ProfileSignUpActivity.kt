@@ -106,7 +106,7 @@ class ProfileSignUpActivity : AppCompatActivity() {
                                         startActivity(
                                             Intent(
                                                 applicationContext,
-                                                MainNavActivity::class.java
+                                                PreferenceSelectionActivity::class.java
                                             )
                                         )
 

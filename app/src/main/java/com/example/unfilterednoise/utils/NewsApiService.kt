@@ -21,4 +21,12 @@ interface NewsApiService {
         @Query("apiKey") apiKey: String = "50c6ece1470348e794d680c15137e8ae"
     ): NewsResponse
 
+        @GET("everything")
+        suspend fun getNewsSpecific(
+            @Query("q") query: String, // Use 'q' to search for keywords, e.g., "technology"
+            @Query("apiKey") apiKey: String
+        ): NewsResponse
+
+
+
 }

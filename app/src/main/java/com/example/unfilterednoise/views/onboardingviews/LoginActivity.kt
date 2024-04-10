@@ -53,17 +53,23 @@ class LoginActivity : AppCompatActivity() {
         }
         else{
             firebaseAuth.signInWithEmailAndPassword(userEmail,userPass).addOnSuccessListener {
-                firestore.collection("UserDetails")
-                    .whereEqualTo("UserEmail",userEmail).get().addOnSuccessListener {
-                            documents ->
-                        if(!documents.isEmpty){
-                            val doc = documents.documents[0]
-                            userName=doc.getString("UserName").toString()
-                            val mIntent = Intent(applicationContext, MainNavActivity::class.java)
-                            startActivity(mIntent)
-                            finish()
-                        }
+                val uid = firebaseAuth.currentUser?.uid.toString()
+
+                getUserName(uid){userName->
+
+                    if (userName == ""){
+
+                        startActivity(Intent(applicationContext,ProfileSignUpActivity::class.java))
+                        finish()
                     }
+                    else{
+
+                        startActivity(Intent(applicationContext,MainNavActivity::class.java))
+                        finish()
+
+                    }
+
+                }
             }.addOnFailureListener {
                 Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
             }
@@ -99,6 +105,17 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun getUserName(uid: String, callback: (String) -> Unit) {
+        firestore = FirebaseFirestore.getInstance()
+        firestore.collection("UserDetails").whereEqualTo("UserUID", uid)
+            .get().addOnSuccessListener { documents ->
+                if (!documents.isEmpty) {
+                    val doc = documents.documents[0]
+                    val userName = doc.getString("UserName").toString()
 
+                    callback(userName)
+                }
+            }
+    }
 
 }

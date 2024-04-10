@@ -1,5 +1,7 @@
 package com.example.unfilterednoise.adapters
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unfilterednoise.R
-import com.example.unfilterednoise.utils.n_api.Article
+import com.example.unfilterednoise.utils.news_api.Article
+import com.example.unfilterednoise.views.mainbottomnavigation.feedviews.NewsViewActivity
 import com.squareup.picasso.Picasso
 
-class LatestNewsAdapter: RecyclerView.Adapter<LatestNewsAdapter.NewsViewHolder>() {
+class LatestNewsAdapter(private val context: Context, article: MutableList<Article>) : RecyclerView.Adapter<LatestNewsAdapter.NewsViewHolder>() {
 
     private var articles: List<Article> = listOf()
 
@@ -40,7 +43,16 @@ class LatestNewsAdapter: RecyclerView.Adapter<LatestNewsAdapter.NewsViewHolder>(
         fun bind(article: Article) {
             titleTextView.text = article.title
             Picasso.get().load(article.urlToImage).into(imgView)
+
+            itemView.setOnClickListener {
+                val intent = Intent(context, NewsViewActivity::class.java)
+                intent.putExtra("title", article.title)
+                intent.putExtra("image", article.urlToImage)
+                intent.putExtra("content", article.description)
+                intent.putExtra("urlToWeb",article.url)
+                Intent.FLAG_ACTIVITY_NEW_TASK
+                context.startActivity(intent)
+            }
         }
     }
-
 }

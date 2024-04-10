@@ -20,7 +20,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="@string/app_name" />
+            app:title="@string/app_name" >
+
+            <ImageButton
+                android:id="@+id/browseNews"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center|end"
+                android:background="@android:color/transparent"
+                android:src="@drawable/public_fill1_wght300_grad0_opsz24"
+                tools:layout_editor_absoluteX="177dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/materialSwitch"
@@ -34,7 +46,21 @@
             app:layout_constraintStart_toStartOf="@+id/materialToolbar"
             app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:gravity="center"
+            android:text="Try Summarization"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/materialSwitch"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -42,7 +68,7 @@
             app:cardCornerRadius="16dp"
             app:layout_constraintEnd_toEndOf="@+id/materialSwitch"
             app:layout_constraintStart_toStartOf="@+id/materialSwitch"
-            app:layout_constraintTop_toBottomOf="@+id/materialSwitch" >
+            app:layout_constraintTop_toBottomOf="@+id/materialSwitch">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -53,8 +79,8 @@
                     android:id="@+id/newsTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="19sp"
                     android:text="Enter the New Era of Mobile AI With Samsung Galaxy S24 Series"
+                    android:textSize="19sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -65,8 +91,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="149dp"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/galaxy_s24_series_main1"
                     android:scaleType="centerCrop"
+                    android:src="@drawable/galaxy_s24_series_main1"
                     app:layout_constraintEnd_toEndOf="@+id/newsTitle"
                     app:layout_constraintStart_toStartOf="@+id/newsTitle"
                     app:layout_constraintTop_toBottomOf="@+id/newsTitle" />
@@ -77,14 +103,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:textIsSelectable="true"
                     android:textSize="18sp"
-                    android:text="Galaxy AI introduces meaningful intelligence aimed at enhancing every part of life, especially the phone’s most fundamental role: communication.To give Galaxy users an incredible new tool, Galaxy turned to the worldwide leader of search, Google, and opened up new forms of discovery with a simple gesture.With a long press on the home button, users can circle, highlight, scribble on or tap anything on Galaxy S24’s screen to see helpful, high-quality search results.Organization also gets a big boost with Note Assist6 in Samsung Notes, featuring AI-generated summaries, template creation that streamlines notes with pre-made formats and cover creation to make notes easy to spot with a brief preview. "
                     app:layout_constraintEnd_toEndOf="@+id/newsImg"
                     app:layout_constraintStart_toStartOf="@+id/newsImg"
                     app:layout_constraintTop_toBottomOf="@+id/newsImg" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
         </com.google.android.material.card.MaterialCardView>
