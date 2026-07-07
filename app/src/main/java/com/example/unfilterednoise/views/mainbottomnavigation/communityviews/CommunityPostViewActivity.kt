@@ -64,7 +64,7 @@ class CommunityPostViewActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.vPostToolbar)
         binding.vPostToolbar.title=null
-        binding.vPostToolbar.setNavigationIcon(com.google.android.material.R.drawable.abc_ic_ab_back_material)
+        binding.vPostToolbar.setNavigationIcon(R.drawable.rounded_arrow_back_24)
         binding.vPostToolbar.setNavigationOnClickListener {
             finish()
         }

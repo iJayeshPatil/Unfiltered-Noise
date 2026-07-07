@@ -69,13 +69,13 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
 
     private fun fetchNewsData() {
         val apiKey = "50c6ece1470348e794d680c15137e8ae"
-        val sources = "bbc-news"
+        val sources = "sports"
         val page = 1
 
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = newsApiService.getNews(sources, page, apiKey)
+                val response = newsApiService.getNewsSpecific(sources, apiKey)
                 withContext(Dispatchers.Main) {
                     adapter.setArticles(response.articles)
                     adapter1.setArticles(response.articles)

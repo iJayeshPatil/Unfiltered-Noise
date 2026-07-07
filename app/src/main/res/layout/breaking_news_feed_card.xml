@@ -7,7 +7,7 @@
     android:layout_width="196dp"
     android:layout_height="259dp"
     android:fadingEdge="horizontal"
-    app:cardCornerRadius="16dp">
+    app:cardCornerRadius="24dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:maxLines="3"
             android:textIsSelectable="true"
-            android:padding="5dp"
+            android:padding="8dp"
             android:text="Mumbai Coastal Road To Be Inaugurated On 12th; Road Will Reduce Travel Time"
-            android:textSize="21sp"
+            android:textSize="19sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
             android:id="@+id/imgHoldCard1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

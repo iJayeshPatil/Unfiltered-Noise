@@ -1,5 +1,6 @@
 package com.example.unfilterednoise.views.mainbottomnavigation.feedviews
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,15 +10,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.unfilterednoise.R
 import com.example.unfilterednoise.databinding.ActivityNewsViewBinding
 import com.example.unfilterednoise.views.mainbottomnavigation.MainNavActivity
 import com.squareup.picasso.Picasso
+import io.shubham0204.text2summary.Text2Summary
+import kotlinx.coroutines.launch
 
 class NewsViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNewsViewBinding
 
 
+    @SuppressLint("PrivateResource")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding= ActivityNewsViewBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -53,10 +58,15 @@ class NewsViewActivity : AppCompatActivity() {
         binding.materialSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
 
-                val summary = Text2Summary.summarize( nContent , compressionRate = 0.5F)
-
-
-                binding.newsContent.text=summary
+                lifecycleScope.launch {
+                    try {
+                        val summary = Text2Summary.summarize(nContent, compressionRate = 0.5F)
+                        binding.newsContent.text = summary
+                    } catch (e: Exception) {
+                        // Handle potential errors (e.g., network failure or parsing errors)
+                        e.printStackTrace()
+                    }
+                }
 
             } else {
 
